@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+// CSSリセット
+@import "@unocss/reset/eric-meyer.css";
+
+$pc: 520px;
+$sp: 519px;
+
+@mixin pc {
+    @media (min-width: ($pc)) {
+        @content;
+    }
+}
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+@include pc {
+    .sp {
+        display: none !important;
+    }
+}
+
+@include sp {
+    .pc {
+        display: none !important;
+    }
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+#app {
+    margin: 0 auto;
+    text-align: center;
+    width: 1920px;
+    @include sp {
+        width: 100%;
+    }
+}
+
+// ===========================
+// section
+// ------------------------------
+.section {
+    width: 100%;
+    background-image: url("/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include sp {
+        background-image: url("/bg_sp.png");
+    }
+    &.is-show {
+        .section-content {
+            opacity: 1;
+        }
+    }
+}
+.section-content {
+    margin: 0 auto;
+    padding: auto;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.75s;
+}
+
+h2 {
+    color: #232323;
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+h3 {
+    color: #232323;
+}
+
+p {
+    color: #232323;
+}
+
+.section_1 {
+    animation: fadeIn 2s ease 0s 1 normal;
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .section-content {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        .mainv {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1920px;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            @include sp {
+                width: 100%;
+            }
+        }
+    }
+}
