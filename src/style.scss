@@ -69,13 +69,13 @@ h1 {
         }
     }
     .section-content {
-      margin: 0 auto;
-      padding: auto;
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.5s ease 0.75s;
-      height: 100%;
-  }
+        margin: 0 auto;
+        padding: auto;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.5s ease 0.75s;
+        height: 100%;
+    }
 }
 
 h2 {
@@ -112,7 +112,7 @@ p {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 1920px;
+            max-width: 1920px;
             height: 100%;
             transform: translate(-50%, -50%);
             @include sp {
@@ -123,63 +123,118 @@ p {
 }
 
 .section-2 {
-  .section-content {
-    @include pc {
-      display: flex;
-      position: relative;
-      .character {
-        position: absolute;
-        top: 50%;
-        left: 25%;
-        transform: translate(-50%, -50%);
-      }
-      .text-area {
-        position: absolute;
-        top: 50%;
-        right: -20%;
-        transform: translate(-50%, -50%);
-        .introduction {
-          width: 45vw;
-        }
-        .flexbox {
-          display: flex;
-          justify-content: center;
-          gap: 1.5vw;
-          margin-top: 2vw;
-          a {
-            img {
-              width: 80px;
-              height: 80px;
+    .section-content {
+        @include pc {
+            display: flex;
+            position: relative;
+            .character {
+                position: absolute;
+                top: 50%;
+                left: 25%;
+                transform: translate(-50%, -50%);
+                width: 35vw;
             }
-          }
-        }
-      }
-    }
-    
-    @include sp {
-      display: grid;
-      place-items: center;
-      .character {
-        width: 70vw;
-        margin: 3vw 0 0;
-      }
-      .text-area {
-        .introduction {
-          width: 90vw;
-        }
-        .flexbox {
-          display: flex;
-          justify-content: center;
-          gap: 3.5vw;
-          margin: 4vw 0 0;
-          a {
-            img {
-              width: 50px;
-              height: 50px;
+            .text-area {
+                position: absolute;
+                top: 50%;
+                right: -20%;
+                transform: translate(-50%, -50%);
+                .introduction {
+                    width: 45vw;
+                    &.draft-text {
+                        top: 5vw;
+                        position: relative;
+                    }
+                }
+                .box {
+                    display: flex;
+                    justify-content: center;
+                    gap: 1.5vw;
+                    margin-top: 2vw;
+                    a {
+                        img {
+                            width: 80px;
+                            height: 80px;
+                        }
+                    }
+                }
             }
-          }
         }
-      }
+
+        @include sp {
+            display: grid;
+            place-items: center;
+            .character {
+                width: 70vw;
+                margin: 3vw 0 0;
+            }
+            .text-area {
+                .introduction {
+                    width: 90vw;
+                }
+                .box {
+                    display: flex;
+                    justify-content: center;
+                    gap: 3.5vw;
+                    margin: 4vw 0 0;
+                    a {
+                        img {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
+}
+
+.section-3 {
+    .section-content {
+        @include pc {
+            position: relative;
+            img {
+                position: absolute;
+                transform: translate(-50%, -50%);
+            }
+            .draft {
+                top: 50%;
+                left: 25%;
+                width: 35vw;
+            }
+            .heading {
+                top: 30%;
+                left: 72.5%;
+                width: 35vw;
+            }
+            .draft-text {
+                top: 55%;
+                left: 72.5%;
+                width: 35vw;
+            }
+        }
+
+        @include sp {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas: "a" "b" "c";
+            place-items: center;
+            height: 175vw;
+            .draft {
+                grid-area: b;
+                width: 90vw;
+                margin: 10vw 0;
+            }
+            .heading {
+                grid-area: a;
+                width: 80vw;
+                margin-top: 10vw;
+            }
+            .draft-text {
+                grid-area: c;
+                width: 90vw;
+            }
+        }
+    }
 }
