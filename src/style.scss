@@ -254,16 +254,20 @@ p {
             flex-wrap:wrap;
             justify-content:center;
             align-items:center;
-            width: 50vw;
+            width: 100%;
             margin: auto;
-            gap: 1vw 1vw;
+            gap: 1vw;
             @include sp {
                 width: 100%;
-                margin: 0 0 0 2vw;
+                padding: 0 0 0 2vw;
                 gap: 4vw 2vw;
             }
             &-item {
-                max-width: 23.5vw;
+                @include pc {
+                    &.spacer {
+                        width: 100%;
+                    }
+                }
                 @include sp {
                     max-width: 45vw;
                 }
