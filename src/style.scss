@@ -258,18 +258,47 @@ p {
             margin: auto;
             gap: 1vw;
             @include sp {
-                width: 100%;
-                padding: 0 0 0 2vw;
+                width: 95%;
+                margin: 0 0 0 4vw;
                 gap: 4vw 2vw;
             }
             &-item {
                 @include pc {
+                    width: 25vw;
                     &.spacer {
                         width: 100%;
                     }
                 }
                 @include sp {
                     max-width: 45vw;
+                }
+            }
+        }
+    }
+}
+
+.section-5 {
+    .section-content {
+        .heading {
+            margin: 12vw 0;
+            width: 30vw;
+            @include sp {
+                margin: 18vw 0;
+                width: 80vw;
+            }
+        }
+        .box {
+            display: flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            align-items:center;
+            width: 100%;
+            margin: auto;
+            gap: 4vw;
+            &-item {
+                width: 25vw;
+                @include sp {
+                    width: 45vw;
                 }
             }
         }
