@@ -3,6 +3,8 @@
 // CSSリセット
 @import "@unocss/reset/eric-meyer.css";
 
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;500&display=swap");
+
 $pc: 520px;
 $sp: 519px;
 
@@ -223,8 +225,7 @@ p {
             height: 175vw;
             .draft {
                 grid-area: b;
-                width: 90vw;
-                margin: 10vw 0;
+                width: 80vw;
             }
             .heading {
                 grid-area: a;
@@ -308,7 +309,7 @@ p {
 .section-6 {
     .section-content {
         .heading {
-            margin: 4vw 0;
+            margin: 4vw 0 2vw;
             width: 17.5vw;
             @include sp {
                 margin: 10vw 0;
@@ -323,10 +324,39 @@ p {
                 }
             }
         }
-        .banner {
-            margin: 4vw 0;
+        .count {
+            display: inline-block;
+            border-radius: 1vw;
+            background: linear-gradient(to right, #c1b7dd, #f1b4d6);
+            margin: 2vw auto 0;
+            padding: 0.25vw;
             @include sp {
-                margin: 10vw 0;
+                margin: 8vw 0 0;
+                padding: 0.7vw;
+                border-radius: 2.5vw;
+            }
+            &_txt {
+                padding: 1vw 0;
+                display: block;
+                border-radius: 0.8vw;
+                background: #ffffff;
+                font-family: "Noto Serif TC", serif;
+                width: 48vw;
+                font-size: 3vw;
+                letter-spacing: 0.25vw;
+                color: #9686c0;
+                @include sp {
+                    width: 88vw;
+                    font-size: 6vw;
+                    padding: 3vw 0.5vw;
+                    border-radius: 2vw;
+                }
+            }
+        }
+        .banner {
+            margin: 2vw 0;
+            @include sp {
+                margin: 8vw 0;
             }
             a {
                 img {
