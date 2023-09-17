@@ -3,8 +3,6 @@
 // CSSリセット
 @import "@unocss/reset/eric-meyer.css";
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;500&display=swap");
-
 $pc: 520px;
 $sp: 519px;
 
@@ -340,7 +338,7 @@ p {
                 display: block;
                 border-radius: 0.8vw;
                 background: #ffffff;
-                font-family: "Noto Serif TC", serif;
+                font-family: "makinas-4-square", sans-serif;
                 width: 48vw;
                 font-size: 3vw;
                 letter-spacing: 0.25vw;
@@ -351,6 +349,20 @@ p {
                     padding: 3vw 0.5vw;
                     border-radius: 2vw;
                 }
+            }
+        }
+        .remark {
+            color: #9686c0;
+            font-family: "makinas-4-square", sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+            img {
+                width: 30px;
+                vertical-align: sub;
+            }
+            @include sp {
+                font-size: 4vw;
             }
         }
         .banner {
